@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Artmart</title>
+  <style>
+    .sample-wrapper {
+      width: 100%;
+    }
+
+    .sample-frame {
+      box-sizing: border-box;
+      border-image-source: url(frame-styles/classic.jpg) !important;
+      border-image-slice: 115 !important;
+      border-width: 14px !important;
+      background-color: rgb(41, 67, 76);
+      padding: 22px !important;
+      width: 100%;
+      height: auto;
+      max-height: 364px;
+    }
+
+    /* Added CSS classes to replace inline styles */
+    .styled-input,
+    .styled-range {
+      background-color: #EFF3F5;
+    }
+
+    .link-style {
+      margin-left: 1em;
+      text-decoration: none;
+      color: #2B2E22;
+    }
+
+    .inline-block {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="frameheader">
+      <div class="framelogo">
+        <a href="search.html" class="inline-block">
+          <img src="artmart_logo.png" alt="Artmart" class="logo">
+        </a>
+      </div>
+
+      <div class="navigation">
+        <a href="search.html" class="link-style">
+          Search
+        </a>
+        <a href="cart.html" class="link-style">
+          Cart (2)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="framing-main">
+    <div id="preview-container" class="framing-preview">
+      <div class="sample-wrapper">
+        <img id="preview-image" src="met-objects/DP141042.jpg" alt="" class="sample-frame">
+      </div>
+      <div class="framing-preview museum-label">
+        <strong>Katsushika Hokusai</strong><br>
+        <i>Under the Wave off Kanagawa (Kanagawa oki nami ura), or The Great Wave, from the series Thirty-six Views of Mount Fuji (Fugaku sanjūrokkei),</i> ca. 1830–32
+      </div>
+    </div>
+
+    <form id="framing-form" class="framing-form museum-label" action="cart.html">
+      <fieldset>
+        <legend>Print Size</legend>
+        <div class="segmented">
+          <input type="radio" name="print-size" id="print-size-s" value="S">
+          <label for="print-size-s" id="print-size-s-label">Small<br>29.7 × 20.2 cm</label>
+          <input type="radio" name="print-size" id="print-size-m" value="M">
+          <label for="print-size-m" id="print-size-m-label">Medium<br>42 × 28.7 cm</label>
+          <input type="radio" name="print-size" id="print-size-l" value="L" checked>
+          <label for="print-size-l" id="print-size-l-label">Large<br>59.4 × 40.5 cm</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Frame Width</legend>
+        <div class="framing-form-row">
+          <label>Frame</label>
+          <div>
+            <input type="number" class="styled-input" name="frameWidth" min="2" max="5" value="2" step="0.1" aria-label="Frame Width">
+            cm
+          </div>
+        </div>
+        <input type="range" class="styled-range" name="frameWidthR" min="2" max="5" value="2" step="0.1" aria-hidden="true">
+      </fieldset>
+
+      <fieldset>
+        <legend>Frame Style</legend>
+        <div class="frame-style-row">
+          <!-- Frame style options -->
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Mat Width</legend>
+        <div class="framing-form-row">
+          <label>Mat</label>
+          <div>
+            <input type="number" class="styled-input" name="matWidth" min="0" max="10" value="3" step="0.1" aria-label="Mat Width">
+            cm
+          </div>
+        </div>
+        <input type="range" class="styled-range" name="matWidthR" min="0" max="10" value="3" step="0.1" aria-hidden="true">
+      </fieldset>
+
+      <fieldset>
+        <legend>Mat Color</legend>
+        <div class="mat-color-row">
+          <!-- Mat color options -->
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Price</legend>
+        <div class="framing-form-row">
+          <label for="price">Price (excl. shipping)</label>
+          <div>
+            <span id="price" class="price">€ 180.25</span>
+          </div>
+        </div>
+        <div class="framing-form-row">
+          <label for="total-size">Total Size (incl. frame and mat)</label>
+          <div id="total-size">69.4 × 50.5 cm</div>
+        </div>
+        <button type="submit" class="buy">Add to Cart</button>
+      </fieldset>
+    </form>
+  </main>
+</body>
+
+</html>
